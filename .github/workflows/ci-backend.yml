@@ -5,15 +5,14 @@ name: CI - Build Backend
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     path:
       - backend/**
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
