@@ -1,5 +1,5 @@
 # Specify the version of the Docker Compose file format
-version: '3.8'
+# version: '3.8'
 # Define the services that will run in your application
 services:
 
@@ -30,7 +30,7 @@ services:
       - "8080:8080"
     environment:
       # Set the Spring DataSource URL to connect to the MySQL database service
-      SPRING_DATASOURCE_URL: jdbc:mysql://database:3306/product
+      SPRING_DATASOURCE_URL: jdbc:mysql://database:3306/product?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
       # Set the username for connecting to the MySQL database
       SPRING_DATASOURCE_USERNAME: product
       # Set the password for connecting to the MySQL database
