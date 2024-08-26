@@ -25,3 +25,4 @@ EXPOSE 8080
 
 # Specify the command to run when the container starts - run the Java application using the JAR file
 CMD ["java", "-jar", "server.jar"]
+

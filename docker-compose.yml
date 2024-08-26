@@ -44,17 +44,19 @@ services:
     restart: unless-stopped
       
   # Configuration for the client application
-  # client:
-  #   # Build the client image using the Dockerfile in the ./client directory
-  #   build:
-  #     context: ./frontend
-  #   # Expose port 3000 on the host and map it to port 5173 in the container
-  #   ports:
-  #     - "3000:3000"
-  #   # Depend on the server service, ensuring it starts before the client
-  #   depends_on:
-  #     - server
-  #   restart: on-failure
+  client:
+    # Build the client image using the Dockerfile in the ./client directory
+    build:
+      context: ./frontend
+    # Expose port 3000 on the host and map it to port 5173 in the container
+    ports:
+      - "3000:3000"
+    # Depend on the server service, ensuring it starts before the client
+    depends_on:
+      - server
+    networks:
+      - db
+    restart: on-failure
 
 networks:
   db:
